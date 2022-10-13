@@ -10,26 +10,25 @@ import UIKit
 class ViewController: UIViewController {
     
     fileprivate func changeText() {
-        counterImageFile.text = "Значения счетчика: \(count)"
+        counterLabel.text = "Значение счетчика: \(count)"
     }
     
-    var count: Int = 0 {
+    fileprivate var count: Int = 0 {
         didSet {
         changeText()
         }
     }
 
-    @IBOutlet weak var counterImageFile: UILabel!
+    
+    @IBOutlet weak var counterLabel: UILabel!
     @IBOutlet weak var changeButton: UIButton!
     
-    @IBAction func Clecker(_ sender: Any) {
+    @IBAction func increaseClickCount(_ sender: Any) {
         count += 1
     }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        counterImageFile.text = "Значения счетчика: \(count)"
+        changeText()
         }
 }
 
